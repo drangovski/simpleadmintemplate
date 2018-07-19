@@ -16,6 +16,6 @@ Also, feel free to suggest us for any components you want to see next.
 
 I get it.. you find Simple Admin Template useful for your projects and you want to buy me a beer for it, right? You can do that buy clicking on the button below and do that.
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](K657UG3QMFHVQ)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K657UG3QMFHVQ)
 
 And.. Of course, if you ever come down here on the Balkans, just drop me a line that you are here and I would gladly accept the beer offer IRL :)
