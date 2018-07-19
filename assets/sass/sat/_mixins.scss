@@ -1,0 +1,92 @@
+@mixin border($type, $size, $style, $color) {
+	@if $type == 'full' {
+		border-left: $size;
+		border-right: $size;
+		border-top: $size;
+		border-bottom: $size;
+		border-style: $style;
+		border-color: $color;
+	}
+
+	@else if $type == 'left' {
+		border: 0px;
+		border-left: $size;
+		border-style: $style;
+		border-color: $color;
+	}
+
+	@else if $type == 'right' {
+		border: 0px;
+		border-right: $size;
+		border-style: $style;
+		border-color: $color;
+	}
+
+	@else if $type == 'top' {
+		border: 0px;
+		border-top: $size;
+		border-style: $style;
+		border-color: $color;
+	}
+
+	@else if $type == 'bottom' {
+		border: 0px;
+		border-bottom: $size;
+		border-style: $style;
+		border-color: $color;
+	}
+}
+
+
+@mixin transition($duration) {
+	-webkit-transition: $duration;
+       -moz-transition: $duration;
+         -o-transition: $duration;
+            transition: $duration;
+}
+
+
+@mixin switch($switch-color) {
+	@if $switch-color == 'red' {
+        input[type="checkbox"].switchbox:checked + .switch {
+            background-color: lighten($switch-red, 20%);
+            &:before {
+                background-color: $switch-red;
+            }
+        }
+	}
+
+	@else if $switch-color == 'green' {
+        input[type="checkbox"].switchbox:checked + .switch {
+            background-color: lighten($switch-green, 20%);
+            &:before {
+                background-color: $switch-green;
+            }
+        }
+	}
+
+	@else if $switch-color == 'blue' {
+        input[type="checkbox"].switchbox:checked + .switch {
+            background-color: lighten($switch-blue, 20%);
+            &:before {
+                background-color: $switch-blue;
+            }
+        }
+	}
+
+	@else if $switch-color == 'yellow' {
+        input[type="checkbox"].switchbox:checked + .switch {
+            background-color: lighten($switch-yellow, 20%);
+            &:before {
+                background-color: $switch-yellow;
+            }
+        }
+	}
+	
+}
+
+@mixin mq($width) {
+	@media all and (max-width: $width) {
+		@content;
+	}
+}

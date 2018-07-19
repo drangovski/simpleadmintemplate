@@ -1,0 +1,386 @@
+<!DOCTYPE HTML>
+<!--[if IE 9 ]>    <html lang="en" id="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+	<title>Simple Admin Template | Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/jquery.scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/simple-admin-template.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-grid.css">
+
+
+	<script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="assets/js/dataTables.responsive.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
+	<script src="assets/js/jquery.scrollbar.js"></script>
+	
+</head>
+<body>
+	
+	<div class="wrapper">
+		<!-- Left sidebar -->
+		<div class="lsidebar">
+			<!-- Identity block -->
+			<div class="identity-block">
+				<img src="assets/img/logo.png" alt="simple admin template">
+			</div>
+			<!-- Identity block ends -->
+
+			<!-- User block -->
+			<div class="user-block">
+				<div class="ub-image">
+					<img src="assets/img/user.png" alt="user image">
+				</div>
+				<span>Sandor Clegane</span>
+				<a href="javascript:;" class="logout icon-power"></a>
+			</div>
+			<!-- User block ends -->
+
+			<!-- Navigation -->
+			<div class="navigation">
+				<ul>
+					<li><a href="/sat" class="icon-chart-line active">Dashboard</a></li>
+					<li><a href="/sat/elements.html" class="icon-switch">Elements</a></li>
+					<li><a href="/sat/lists.html" class="icon-note-list">Lists</a></li>
+					<li><a href="/sat/typography.html" class="icon-pentool">Typography</a></li>
+					<li><a href="/sat/icons.html" class="icon-brush">Icons</a></li>
+				</ul>
+			</div>
+			<!-- Navigation ends -->
+
+			<!-- Copyright -->
+			<div class="copyright">
+				<span>2017 &copy; Simple Admin Template</span>
+			</div>
+			<!-- Copyright ends -->
+		</div>
+		<!-- Left sidebar ends-->
+
+		<!-- Content wrapper -->
+		<div class="content-wrapper">
+			<!-- Header -->
+			<div class="header">
+				<span class="page-title icon-chart-line">Dashboard</span>
+				<div class="header-actions-wrapper">
+					<div class="search-field">
+						<input type="text" name="" placeholder="Search">
+						<input type="submit" name="">
+					</div>
+					<div class="header-actions">
+						<div class="notifications">
+							<a class="icon-bell" href="javascript:;"><span class="counter">7</span></a>
+						</div>
+						<div class="messages">
+							<a class="icon-mail" href="javascript:;"><span class="counter">9+</span></a>
+						</div>
+						<div class="navigation-switch">
+							<a class="icon-circle-right toggle-nav" href="javascript:;"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Header ends -->
+
+			<!-- Main content -->
+			<div class="main-content">
+				<div class="container-fluid">
+					 <div class="row">
+					 	<div class="col-sm">
+					 		<!-- Widget Block -->
+							<div class="widget-block">
+								<!-- Widget Heading -->
+								<div class="widget-header">
+									<span class="widget-title">User Statistics</span>
+									<span class="widget-subtitle">Returning vs. New visitors statistics</span>
+								</div>
+								<!-- Widget Heading -->
+
+								<!-- Widget Content -->
+								<div class="widget-content ta-center">
+									<div class="doughnut-cont">
+										<canvas id="doughnutChart" width="300" height="285"></canvas>
+									</div>
+									
+								</div>
+								<!-- Widget Content -->
+
+								<!-- Widget Footer -->
+								<div class="widget-footer">
+									<span class="widget-status icon-info">Updated 30min ago</span>
+									<a href="javascript:;" class="widget-more">&middot;&middot;&middot;</a>
+								</div>
+								<!-- Widget Footer -->
+							</div>
+							<!-- Widget Block -->
+					 	</div>
+					 	<div class="col-sm order-md-3 order-xxl-2">
+					 		<!-- Widget Block -->
+							<div class="widget-block">
+								<!-- Widget Heading -->
+								<div class="widget-header">
+									<span class="widget-title">Visitors</span>
+									<span class="widget-subtitle">Total visitors per 24 hours period</span>
+								</div>
+								<!-- Widget Heading -->
+
+								<!-- Widget Content -->
+								<div class="widget-content">
+									<canvas id="lineChart" width="300" height="285"></canvas>
+								</div>
+								<!-- Widget Content -->
+
+								<!-- Widget Footer -->
+								<div class="widget-footer">
+									<span class="widget-status icon-info">Updated 30min ago</span>
+									<a href="javascript:;" class="widget-more">&middot;&middot;&middot;</a>
+								</div>
+								<!-- Widget Footer -->
+							</div>
+							<!-- Widget Block -->
+					 	</div>
+					 	<div class="col-sm order-md-2 order-xxl-3">
+					 		<!-- Widget Block -->
+							<div class="widget-block">
+								<!-- Widget Heading -->
+								<div class="widget-header">
+									<span class="widget-title">Messages</span>
+									<span class="widget-subtitle">Check your recent messages or create new</span>
+									<div class="widget-action">
+										<a href="javascript:;" class="action-button icon-circle-plus"></a>
+									</div>
+								</div>
+								<!-- Widget Heading -->
+
+								<!-- Widget Content -->
+								<div class="widget-content">
+									<div class="messages-cont scrollbar-inner">
+										<a href="javascript:;" class="message-tile active">
+											<img class="message-user-image" src="assets/img/user-1.png" alt="">
+											<div class="message-info">
+												<span class="message-sender">Gertruda Fenstermacher</span>
+												<p class="message-text">Lorem ipsum dolor sit amet proin gravida auctor ven velith</p>
+											</div>
+											<span class="message-time">12:08 PM</span>
+										</a>
+										<a href="javascript:;" class="message-tile">
+											<img class="message-user-image" src="assets/img/user-1.png" alt="">
+											<div class="message-info">
+												<span class="message-sender">Gertruda Fenstermacher</span>
+												<p class="message-text">Lorem ipsum dolor sit amet proin gravida auctor ven velith</p>
+											</div>
+											<span class="message-time">12:08 PM</span>
+										</a>
+										<a href="javascript:;" class="message-tile">
+											<img class="message-user-image" src="assets/img/user-1.png" alt="">
+											<div class="message-info">
+												<span class="message-sender">Gertruda Fenstermacher</span>
+												<p class="message-text">Lorem ipsum dolor sit amet proin gravida auctor ven velith</p>
+											</div>
+											<span class="message-time">12:08 PM</span>
+										</a>
+										<a href="javascript:;" class="message-tile">
+											<img class="message-user-image" src="assets/img/user-1.png" alt="">
+											<div class="message-info">
+												<span class="message-sender">Gertruda Fenstermacher</span>
+												<p class="message-text">Lorem ipsum dolor sit amet proin gravida auctor ven velith</p>
+											</div>
+											<span class="message-time">12:08 PM</span>
+										</a>
+										<a href="javascript:;" class="message-tile">
+											<img class="message-user-image" src="assets/img/user-1.png" alt="">
+											<div class="message-info">
+												<span class="message-sender">Gertruda Fenstermacher</span>
+												<p class="message-text">Lorem ipsum dolor sit amet proin gravida auctor ven velith</p>
+											</div>
+											<span class="message-time">12:08 PM</span>
+										</a>
+										<a href="javascript:;" class="message-tile">
+											<img class="message-user-image" src="assets/img/user-1.png" alt="">
+											<div class="message-info">
+												<span class="message-sender">Gertruda Fenstermacher</span>
+												<p class="message-text">Lorem ipsum dolor sit amet proin gravida auctor ven velith</p>
+											</div>
+											<span class="message-time">12:08 PM</span>
+										</a>
+										<a href="javascript:;" class="message-tile">
+											<img class="message-user-image" src="assets/img/user-1.png" alt="">
+											<div class="message-info">
+												<span class="message-sender">Gertruda Fenstermacher</span>
+												<p class="message-text">Lorem ipsum dolor sit amet proin gravida auctor ven velith</p>
+											</div>
+											<span class="message-time">12:08 PM</span>
+										</a>
+										<a href="javascript:;" class="message-tile">
+											<img class="message-user-image" src="assets/img/user-1.png" alt="">
+											<div class="message-info">
+												<span class="message-sender">Gertruda Fenstermacher</span>
+												<p class="message-text">Lorem ipsum dolor sit amet proin gravida auctor ven velith</p>
+											</div>
+											<span class="message-time">12:08 PM</span>
+										</a>
+										<a href="javascript:;" class="message-tile">
+											<img class="message-user-image" src="assets/img/user-1.png" alt="">
+											<div class="message-info">
+												<span class="message-sender">Gertruda Fenstermacher</span>
+												<p class="message-text">Lorem ipsum dolor sit amet proin gravida auctor ven velith</p>
+											</div>
+											<span class="message-time">12:08 PM</span>
+										</a>
+										<a href="javascript:;" class="message-tile">
+											<img class="message-user-image" src="assets/img/user-1.png" alt="">
+											<div class="message-info">
+												<span class="message-sender">Gertruda Fenstermacher</span>
+												<p class="message-text">Lorem ipsum dolor sit amet proin gravida auctor ven velith</p>
+											</div>
+											<span class="message-time">12:08 PM</span>
+										</a>
+									</div>
+								</div>
+								<!-- Widget Content -->
+
+								<!-- Widget Footer -->
+								<div class="widget-footer">
+									<a href="javascript:;" class="widget-more">&middot;&middot;&middot;</a>
+								</div>
+								<!-- Widget Footer -->
+							</div>
+							<!-- Widget Block -->
+					 	</div>
+					 </div>
+					 <div class="row">
+					 	<div class="col-sm">
+					 		<!-- Widget Block -->
+							<div class="widget-block">
+								<!-- Widget Heading -->
+								<div class="widget-header">
+									<span class="widget-title">To-Do</span>
+									<span class="widget-subtitle">Preview your tasks or create new</span>
+									<div class="widget-action">
+										<a href="javascript:;" class="action-button icon-circle-plus"></a>
+									</div>
+								</div>
+								<!-- Widget Heading -->
+
+
+								<!-- Widget Content -->
+								<div class="widget-content">
+									<div class="todo-tasks-cont">
+										<div class="todo-task">
+											<div class="form-group">
+												<input type="checkbox" id="checkbox-1" name="checkbox-1" class="checkbox" />
+												<label for="checkbox-1" class="checkbox-label">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</label>
+											</div>
+											<div class="todo-info">
+												<span class="todo-status urgent">Urgent</span>
+												<a href="javascript:;" class="todo-action icon-magnifier"></a>
+											</div>
+										</div>
+										<div class="todo-task">
+											<div class="form-group">
+												<input type="checkbox" id="checkbox-2" name="checkbox-2" class="checkbox" />
+												<label for="checkbox-2" class="checkbox-label">Ut scelerisque vehicula purus sit amet feugiat.</label>
+											</div>
+											<div class="todo-info">
+												<span class="todo-status high">High</span>
+												<a href="javascript:;" class="todo-action icon-magnifier"></a>
+											</div>
+										</div>
+										<div class="todo-task">
+											<div class="form-group">
+												<input type="checkbox" id="checkbox-3" name="checkbox-3" class="checkbox" />
+												<label for="checkbox-3" class="checkbox-label">Praesent et metus eu nulla sollicitudin ultrices.</label>
+											</div>
+											<div class="todo-info">
+												<span class="todo-status medium">Medium</span>
+												<a href="javascript:;" class="todo-action icon-magnifier"></a>
+											</div>
+										</div>
+										<div class="todo-task">
+											<div class="form-group">
+												<input type="checkbox" id="checkbox-4" name="checkbox-4" class="checkbox" />
+												<label for="checkbox-4" class="checkbox-label">Phasellus hendrerit, nisi ut ullamcorper fringilla.</label>
+											</div>
+											<div class="todo-info">
+												<span class="todo-status low">Low</span>
+												<a href="javascript:;" class="todo-action icon-magnifier"></a>
+											</div>
+										</div>
+										<div class="todo-task">
+											<div class="form-group">
+												<input type="checkbox" id="checkbox-5" name="checkbox-5" class="checkbox" />
+												<label for="checkbox-5" class="checkbox-label">Sed id massa blandit, convallis arcu eu, dignissim felis.</label>
+											</div>
+											<div class="todo-info">
+												<span class="todo-status low">Low</span>
+												<a href="javascript:;" class="todo-action icon-magnifier"></a>
+											</div>
+										</div>
+										<div class="todo-task">
+											<div class="form-group">
+												<input type="checkbox" id="checkbox-6" name="checkbox-6" class="checkbox" />
+												<label for="checkbox-6" class="checkbox-label">Praesent tortor tellus, consectetur sit amet ante ac, ullamcorper fringilla urna.</label>
+											</div>
+											<div class="todo-info">
+												<span class="todo-status low">Low</span>
+												<a href="javascript:;" class="todo-action icon-magnifier"></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Widget Content -->
+
+
+								<!-- Widget Footer -->
+								<div class="widget-footer">
+									<span class="widget-status icon-info">The most recent task was added 30 min ago</span>
+									<a href="javascript:;" class="widget-more">&middot;&middot;&middot;</a>
+								</div>
+								<!-- Widget Footer -->
+							</div>
+							<!-- Widget Block -->
+					 	</div>
+					 	<div class="col-sm">
+					 		<!-- Widget Block -->
+							<div class="widget-block">
+								<!-- Widget Heading -->
+								<div class="widget-header">
+									<span class="widget-title">Visitors Graph</span>
+									<span class="widget-subtitle">New visitors per month</span>
+								</div>
+								<!-- Widget Heading -->
+
+								<!-- Widget Content -->
+								<div class="widget-content">
+									<canvas id="barChart" width="300" height="300"></canvas>	
+								</div>
+								<!-- Widget Content -->
+
+								<!-- Widget Footer -->
+								<div class="widget-footer">
+									<span class="widget-status icon-info">Data collected for the previous month will be available after 10 days</span>
+									<a href="javascript:;" class="widget-more">&middot;&middot;&middot;</a>
+								</div>
+								<!-- Widget Footer -->
+							</div>
+							<!-- Widget Block -->
+					 	</div>
+					 </div>
+				</div>
+			</div>
+			<!-- Main content ends -->
+		</div>
+		<!-- Content wrapper ends -->
+		
+	</div>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+	<script src="assets/js/charts.js"></script>
+	
+	
+</body>
+</html>

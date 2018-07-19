@@ -1,0 +1,1702 @@
+/*----------------------------------------------------------------
+    Content Wrapper
+---------------------------------------------------------------- */
+
+// General Styles
+.ta-left {
+    text-align: left !important;
+}
+.ta-right {
+    text-align: right !important;
+}
+.ta-center {
+    text-align: center !important;
+}
+.float-left {
+    float: left !important;
+}
+.float-right {
+    float: right !important;
+}
+.float-none {
+    float: none !important;
+}
+
+// Base Elements
+html,
+body {
+    font-family: "ssregular";
+    font-size: 14px;
+    background-color: #EFF2F4;
+}
+
+.wrapper {
+    float: left;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0 0 0 300px;
+    .lsidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: $lsidebar-bg;
+        @include transition(.3s);
+        transform: translate(0px,0px);
+    }
+    .content-wrapper {
+        float: left;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        @include transition(.3s);
+        transform: translateX(0px);
+        .header {
+            float: left;
+            position: relative;
+            width: 100%;
+            height: 70px;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+        }
+        .main-content {
+            float: left;
+            width: 100%;
+            margin: 0;
+            padding: 30px;
+        }
+    }
+    @include mq(1024px) {
+        padding: 0px 0px 0px 250px;
+        .lsidebar {
+            width: 250px;
+        }
+    }
+    @include mq(768px) {
+        padding: 0px 0px 0px 80px;
+        .lsidebar {
+            width: 80px;
+        }
+        .content-wrapper {
+            .main-content {
+                padding: 15px 10px;
+            }
+        }
+    }
+    @include mq(480px) {
+        padding: 0px;
+        .lsidebar {
+            left: -80px;
+        }
+    }
+    &.slide {
+        overflow: hidden;
+        .lsidebar {
+            @include transition(.3s);
+            transform: translate(80px,0px);
+        }
+        .content-wrapper {
+            @include transition(.3s);
+            transform: translateX(80px);
+            & .header .header-actions-wrapper div.navigation-switch > a {
+                @include transition(.3s);
+                transform: translateX(-80px);
+            }
+        }
+    }
+}
+
+// Identity Block
+.identity-block {
+    float: left;
+    width: 100%;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+    img {
+        float: left;
+        margin: 20px 15px;
+        padding: 0;
+    }
+}
+
+// User Block
+.user-block {
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 70px;
+    margin: 0;
+    padding: 20px 0 20px 80px;
+    background-color: $userblock-bg;
+    .ub-image {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        width: 50px;
+        height: 50px;
+        margin: 0;
+        padding: 0;
+        border-radius: 50%;
+        overflow: hidden;
+
+        @include border(full, 3px, solid, $lsidebar-bg);
+        img {
+            float: left;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    }
+     > span {
+        float: left;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 15px 0 0 0;
+        font-family: "oxygenbold";
+        font-size: 13px;
+        color: #FFFFFF;
+        &:before {
+            content: $user-greeting;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-family: "ssregular";
+            font-size: 12px;
+            color: #FFFFFF;
+        }
+    }
+    .logout {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: darken($userblock-bg, 15%);
+        text-decoration: none;
+
+        @include transition(.2s);
+        &:before {
+            font-size: 17px;
+        }
+        &:hover {
+            color: $primary-action-color;
+        }
+    }
+    @include mq(768px) {
+        > span {
+            display: none;
+        }
+        .logout {
+            display: none;
+        }
+    }
+}
+
+// Navigation
+.navigation {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+     > ul {
+        float: left;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+         > li {
+            float: left;
+            position: relative;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+             > a {
+                float: left;
+                width: 100%;
+                height: 50px;
+                margin: 0;
+                padding: 16px 15px 17px 50px;
+                font-family: "ssregular";
+                font-size: 15px;
+                color: #FFFFFF;
+                text-decoration: none;
+
+                cursor: pointer;
+                @include border(left, 5px, solid, transparent);
+                &.active {
+                    background-color: $navigation-active-bg;
+
+                    @include border(left, 5px, solid, $navigation-active-border);
+                    &:before {
+                        color: #FFFFFF;
+                    }
+                }
+                &:before {
+                    position: absolute;
+                    top: 12px;
+                    left: 20px;
+                    margin: 0;
+                    padding: 0;
+                    color: $navigation-inactive-icon;
+                }
+            }
+        }
+    }
+    @include mq(768px) {
+        > ul > li > a {
+            padding: 0px;
+            text-indent: -99999px;
+            &:before {
+                text-indent: 0px;
+                left: 30px;
+            }
+        }
+    }
+}
+
+// Copyright
+.copyright {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+     > span {
+        float: left;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: "ssregular";
+        font-size: 14px;
+        color: #5293B0;
+        text-align: center;
+    }
+}
+
+// Header
+.page-title {
+    float: left;
+    margin: 0;
+    padding: 23px 30px 26px 70px;
+    font-family: "oxygenbold";
+    font-size: 18px;
+    color: $text-color;
+    &:before {
+        position: absolute;
+        top: 16px;
+        left: 22px;
+        font-size: 28px;
+        color: $header-icon;
+    }
+}
+.header-actions-wrapper {
+    float: right;
+    margin: 0;
+    padding: 0;
+    .search-field {
+        float: left;
+        position: relative;
+        margin: 15px 15px 0 0;
+        padding: 0;
+         > input[type="text"] {
+            float: left;
+            width: 320px;
+            height: 40px;
+            padding: 0 40px 0 15px;
+            border-radius: 4px;
+
+            @include border(full,1px,solid, $input-border);
+        }
+         > input[type="submit"] {
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            width: 38px;
+            height: 38px;
+            border: 0;
+            border-radius: 0 4px 4px 0;
+            background-image: url(../img/search-icon.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: #FFFFFF;
+            z-index: 3;
+
+            cursor: pointer;
+            text-indent: -99999px;
+        }
+    }
+    .header-actions {
+        float: left;
+        margin: 0;
+        padding: 0;
+        @include transition(.3s);
+        transform: translateX(0px);
+         > div {
+            float: left;
+            position: relative;
+            margin: 0;
+            padding: 0;
+             > a {
+                float: left;
+                display: table;
+                position: relative;
+                width: 70px;
+                height: 70px;
+                color: $primary-action-color;
+                text-align: center;
+                text-decoration: none;
+
+                @include border(left,1px,solid,$widget-border);
+                &:before {
+                    display: table-cell;
+                    position: relative;
+
+                    vertical-align: middle;
+                }
+                 > span.counter {
+                    position: absolute;
+                    top: 7px;
+                    right: 7px;
+                    width: 16px;
+                    height: 16px;
+                    padding: 1px 0 0 0;
+                    font-family: "ssbold";
+                    font-size: 11px;
+                    color: #FFFFFF;
+                    text-align: center;
+                    border-radius: 50%;
+                    background-color: $notification-counter-bg;
+                }
+            }
+            &.navigation-switch {
+                display: none;
+                a.toggle-nav {
+                    &:before {
+                        @include transition(.1s);
+                    }
+                    &.active {
+                       &:before {
+                            transform: rotate(-180deg);
+                            width: 70px;
+                            height: 70px;
+                            line-height: 100%;
+                            top: -2px;
+                        } 
+                    }
+                }
+            }
+        }
+    }
+    @include mq(1024px) {
+        .search-field {
+            > input[type="text"] {
+                width: 150px;
+            }
+        }
+    }
+    @include mq(600px) {
+        .search-field {
+            display: none;
+        }
+    }
+    @include mq(480px) {
+        .header-actions {
+            .notifications {
+                display: none;
+            }
+            .messages {
+                display: none;
+            }
+            div.navigation-switch {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+
+// Form Elements
+.form-group {
+    float: left;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+// Widget block
+.widget-block {
+    float: left;
+    position: relative;
+    width: 100%;
+    min-height: 180px;
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    background-color: $widget-bg;
+
+    @include border(full, 1px, solid, $widget-border);
+    .widget-header {
+        float: left;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 27px 90px 23px 30px;
+
+        @include border(bottom, 1px, solid, $widget-border);
+        span.widget-title {
+            float: left;
+            width: 100%;
+            margin: 0;
+            padding: 0 0 0 0;
+            font-family: "oxygenbold";
+            font-size: 16px;
+            color: $text-color;
+            overflow: hidden !important;
+
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        span.widget-subtitle {
+            float: left;
+            width: 100%;
+            margin: 0;
+            padding: 0 0 3px 0;
+            font-family: "ssregular";
+            font-size: 14px;
+            color: $subtext-color;
+            overflow: hidden !important;
+
+            line-height: 150%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .widget-action {
+            position: absolute;
+            top: 28px;
+            right: 30px;
+            margin: 0;
+            padding: 0;
+            z-index: 10;
+            .action-button {
+                float: left;
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+                &:before {
+                    font-size: 28px;
+                    color: #489EBA;
+                }
+            }
+        }
+    }
+    .widget-footer {
+        float: left;
+        position: relative;
+        width: 100%;
+        min-height: 42px;
+        margin: 0;
+        padding: 0 15px;
+
+        @include border(top,1px,solid,$widget-border);
+        .widget-status {
+            float: left;
+            position: relative;
+            width: 100%;
+            margin: 0;
+            padding: 12px 40px 12px 22px;
+            font-family: "ssregular";
+            font-size: 13px;
+            color: $subtext-color;
+            overflow: hidden !important;
+
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            &:before {
+                position: absolute;
+                top: 10px;
+                left: 0;
+                font-size: 16px;
+                color: #489EBA;
+            }
+        }
+        .widget-more {
+            position: absolute;
+            top: 1px;
+            right: 20px;
+            margin: 0;
+            padding: 0;
+            font-size: 34px;
+            color: #767676;
+            text-decoration: none;
+
+            font-weight: bolder;
+        }
+    }
+    .widget-content {
+        float: left;
+        width: 100%;
+        margin: 0;
+        padding: 20px 30px;
+    }
+}
+
+// Todo Widget
+.todo-tasks-cont {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    .todo-task {
+        float: left;
+        position: relative;
+        width: 100%;
+        height: 50px;
+        margin: 0;
+        padding: 13px 180px 13px 15px;
+
+        @include border(bottom,1px,solid,$widget-border);
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+    .todo-info {
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        min-width: 150px;
+        margin: 0;
+        padding: 0;
+        .todo-status {
+            float: left;
+            position: relative;
+            margin: 5px 0 0 0;
+            padding: 0 0 0 15px;
+            font-family: "ssregular";
+            font-size: 13px;
+            color: $text-color;
+            &:before {
+                content: "";
+                position: absolute;
+                top: 3px;
+                left: 0;
+                width: 7px;
+                height: 7px;
+                border-radius: 4px;
+                background-color: $text-color;
+            }
+            &.urgent {
+                color: $urgent-status;
+                &:before {
+                    background-color: $urgent-status;
+                }
+            }
+            &.high {
+                color: $high-status;
+                &:before {
+                    background-color: $high-status;
+                }
+            }
+            &.medium {
+                color: $medium-status;
+                &:before {
+                    background-color: $medium-status;
+                }
+            }
+            &.low {
+                color: $low-status;
+                &:before {
+                    background-color: $low-status;
+                }
+            }
+        }
+        .todo-action {
+            float: right;
+            margin: 0;
+            padding: 0;
+            color: $todo-action;
+            text-decoration: none;
+        }
+    }
+}
+
+// Messages widget
+.messages-cont {
+    float: left;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    max-height: 285px;
+    overflow: hidden !important;
+    .message-tile {
+        float: left;
+        position: relative;
+        width: 100%;
+        height: 60px;
+        margin: 15px 0 0 0;
+        padding: 0 75px;
+        border-radius: 4px;
+        background-color: $message-background;
+        overflow: hidden;
+        &:first-child {
+            margin-top: 0;
+        }
+        &.active {
+            background-color: $message-active-background;
+        }
+        img.message-user-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+        }
+        .message-info {
+            float: left;
+            width: 100%;
+            margin: 0;
+            padding: 12px 0;
+            span.message-sender {
+                float: left;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                font-family: "oxygenbold";
+                font-size: 14px;
+                color: $text-color;
+                overflow: hidden !important;
+
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            p.message-text {
+                float: left;
+                width: 100%;
+                margin: 0;
+                padding: 3px 0 0 0;
+                font-family: "ssregular";
+                font-size: 13px;
+                color: $subtext-color;
+                overflow: hidden !important;
+
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+        span.message-time {
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            font-family: "ssbold";
+            font-size: 12px;
+            color: $text-color;
+        }
+    }
+}
+
+// Scrollbar
+.scroll-wrapper > .scroll-content {
+    padding-right: 18px !important;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .scrollbar-inner {
+        padding-right: 30px !important;
+    }
+}
+.scrollbar-inner > .scroll-element.scroll-y {
+    width: 2px;
+}
+.scrollbar-inner > .scroll-element .scroll-bar {
+    background-color: $primary-action-color;
+}
+.scroll-x {
+    display: none !important;
+}
+// Doughnut style
+.doughnut-cont {
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0;
+    padding: 0;
+}
+
+
+// User widget
+.user-widget-block {
+    float: left;
+    position: relative;
+    position: relative;
+    width: 100%;
+    min-height: 180px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border-radius: 6px;
+    background-color: $widget-bg;
+
+    @include border(full, 1px, solid, $widget-border);
+    .delete-user {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        margin: 0;
+        padding: 0;
+        color: $secondary-action-color;
+        text-decoration: none;
+    }
+    .edit-user {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        margin: 0;
+        padding: 0;
+        color: $primary-action-color;
+        text-decoration: none;
+    }
+    .user-info {
+        float: left;
+        width: 100%;
+        margin: 0;
+        padding: 100px 0 98px;
+        text-align: center;
+        img.user-image {
+            display: inline-block;
+            width: 135px;
+            height: 135px;
+            margin: 0;
+            padding: 0;
+            border-radius: 50%;
+        }
+        span.user-name {
+            float: left;
+            width: 100%;
+            margin: 0;
+            padding: 15px 0 0 0;
+            font-family: "oxygenbold";
+            font-size: 16px;
+            color: $text-color;
+        }
+        p.user-role {
+            float: left;
+            width: 100%;
+            margin: 0;
+            padding: 5px 0 0 0;
+            font-family: "ssregular";
+            font-size: 14px;
+            color: $subtext-color;
+        }
+    }
+    .more-user-info {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        font-size: 34px;
+        color: #767676;
+        text-decoration: none;
+
+        font-weight: bolder;
+    }
+}
+
+// Add User widget
+.adduser-widget-block {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    a.adduser-action {
+        float: left;
+        width: 100%;
+        min-height: 435px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 16px;
+
+        @include transition(.2s);
+        @include border(full, 3px, dashed, #D8D7DD);
+        &:hover {
+            border-color: $primary-action-color;
+        }
+         > span {
+            float: left;
+            position: relative;
+            width: 100%;
+            margin: 0;
+            padding: 215px 0 0 0;
+            font-family: "oxygenbold";
+            font-size: 16px;
+            color: $primary-action-color;
+            &:before {
+                position: absolute;
+                top: 150px;
+                left: 50%;
+                margin-left: -20px;
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+// Alerts
+.alerts-cont {
+    float: left;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.alert-cont {
+    float: left;
+    position: relative;
+    width: 100%;
+    min-height: 70px;
+    margin: 15px 0 0 0;
+    padding: 17px 20px 17px 72px;
+    border-radius: 6px;
+    background-color: $alert-default;
+    &:first-child {
+        margin-top: 0;
+    }
+    span.alert-icon {
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        margin: 0;
+        padding: 0;
+    }
+    p.alert-text {
+        float: left;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 18px 0 0 0;
+        font-family: "ssregular";
+        font-size: 14px;
+        color: #FFFFFF;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            font-family: "oxygenbold";
+            font-size: 16px;
+            color: #FFFFFF;
+        }
+    }
+    a.alert-close {
+        position: absolute;
+        top: 0;
+        right: 7px;
+        font-family: "oxygenbold";
+        font-size: 24px;
+        color: rgba(0,0,0,.2);
+        text-decoration: none;
+
+        -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+        &:hover {
+            color: rgba(0,0,0,.1);
+        }
+    }
+    // Success alert
+    &.success {
+        background-color: $alert-success;
+        & span.alert-icon:before {
+            content: "\f100";
+            font-family: icons;
+            font-size: 23px;
+            color: #FFFFFF;
+        }
+        & p.alert-text:before {
+            content: "Success!";
+        }
+    }
+    // Error alert
+    &.error {
+        background-color: $alert-error;
+        & span.alert-icon:before {
+            content: "\f114";
+            font-family: icons;
+            font-size: 23px;
+            color: #FFFFFF;
+        }
+        & p.alert-text:before {
+            content: "Oops!";
+        }
+    }
+    // Warning alert
+    &.warning {
+        background-color: $alert-warning;
+        & span.alert-icon:before {
+            content: "\f105";
+            font-family: icons;
+            font-size: 23px;
+            color: #FFFFFF;
+        }
+        & p.alert-text:before {
+            content: "Warning!";
+        }
+    }
+    // Info alert
+    &.info {
+        background-color: $alert-info;
+        & span.alert-icon:before {
+            content: "\f13d";
+            font-family: icons;
+            font-size: 23px;
+            color: #FFFFFF;
+        }
+        & p.alert-text:before {
+            content: "Info!";
+        }
+    }
+    // Tip alert
+    &.tip {
+        background-color: $alert-tip;
+        & span.alert-icon:before {
+            content: "\f145";
+            font-family: icons;
+            font-size: 23px;
+            color: #FFFFFF;
+        }
+        & p.alert-text:before {
+            content: "Tip!";
+        }
+    }
+}
+
+// Buttons
+.buttons {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.buttons-title {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0 10px 5px;
+    font-family: "ssregular";
+    font-size: 13px;
+    color: $text-color;
+}
+.buttons .default-button {
+    margin: 0 10px 10px 0;
+}
+.default-button {
+    display: inline-block;
+    min-width: 175px;
+    height: 40px;
+    margin: 10px 0;
+    padding: 11px 15px;
+    font-family: "oxygenbold";
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+
+    cursor: pointer;
+    @include transition(.3s);
+    &.blue {
+        background-color: $blue-button;
+        &:hover {
+            background-color: lighten($blue-button, 5%);
+        }
+    }
+    &.green {
+        background-color: $green-button;
+        &:hover {
+            background-color: lighten($green-button, 5%);
+        }
+    }
+    &.red {
+        background-color: $red-button;
+        &:hover {
+            background-color: lighten($red-button, 5%);
+        }
+    }
+    &.yellow {
+        background-color: $yellow-button;
+        &:hover {
+            background-color: lighten($yellow-button, 5%);
+        }
+    }
+}
+
+// Form inputs
+.form-group {
+    float: left;
+    position: relative;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 0;
+     > label {
+        float: left;
+        width: 100%;
+        margin: 0;
+        padding: 0 10px 5px;
+        font-family: "ssregular";
+        font-size: 13px;
+        color: $text-color;
+        text-align: left;
+    }
+    .select-field {
+        float: left;
+        position: relative;
+        position: relative;
+        width: 100%;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+        border-radius: 4px;
+        z-index: 3;
+        overflow: hidden;
+
+        cursor: pointer;
+        @include border(full, 1px, solid, $input-border);
+        &:after {
+            content: "\f126";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 38px;
+            height: 38px;
+            padding: 6px 0;
+            font-family: icons;
+            font-size: 21px;
+            color: $primary-action-color;
+            background-color: #FFFFFF;
+            z-index: 3;
+
+            cursor: pointer;
+            pointer-events: none;
+        }
+         > select {
+            float: left;
+            position: relative;
+            width: 100%;
+            height: 40px;
+            margin: 0;
+            padding: 0 13px 2px;
+            font-family: "oxygenbold";
+            font-size: 14px;
+            color: $input-text-color;
+            border: 0;
+            z-index: 2;
+
+            cursor: pointer;
+        }
+    }
+}
+input[type="text"] {
+    float: left;
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    padding: 0 15px;
+    font-family: "oxygenbold";
+    font-size: 14px;
+    color: $input-text-color;
+    border-radius: 4px;
+
+    @include border(full, 1px, solid, $input-border);
+}
+
+// Upload image input
+.upload-image {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    text-align: center;
+     > div {
+        display: inline-block;
+        position: relative;
+        width: 135px;
+        width: 135px;
+        height: 130px;
+        height: 135px;
+        margin: 0;
+        padding: 70px 0 58px;
+        color: $text-color;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+        z-index: 1;
+        overflow: hidden;
+
+        cursor: pointer;
+        @include border(full, 3px, dashed, #D8D7DD);
+        @include transition(.2s);
+        &:hover {
+            border-color: $primary-action-color;
+        }
+        &:before {
+            content: "\f152";
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            margin-left: -11px;
+            font-family: icons;
+            font-size: 22px;
+        }
+        input[type="file"] {
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 135px;
+            height: 135px;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            z-index: 2;
+
+            cursor: pointer;
+            opacity: 0;
+            text-indent: -99999px;
+        }
+    }
+     > span {
+        float: left;
+        width: 100%;
+        margin: 20px 0 0 0;
+        padding: 0;
+        font-family: "ssregular";
+        font-size: 13px;
+        color: $primary-action-color;
+    }
+}
+
+// Progress Bars
+.progress-bars {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.progress-bar {
+    float: left;
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 0;
+    span.progress-bar-label {
+        float: left;
+        width: 100%;
+        margin: 0;
+        padding: 0 10px 5px;
+        font-family: "ssregular";
+        font-size: 13px;
+        color: $text-color;
+    }
+    .bar {
+        float: left;
+        width: 100%;
+        height: 12px;
+        margin: 0;
+        padding: 0;
+        border-radius: 6px;
+        background-color: $progres-bar-default;
+        overflow: hidden;
+         > div {
+            float: left;
+            height: 12px;
+            margin: 0;
+            padding: 0;
+
+            @include transition(.5s);
+        }
+    }
+    &.blue .bar > div {
+        background-color: $progress-bar-blue;
+    }
+    &.red .bar > div {
+        background-color: $progress-bar-red;
+    }
+    &.green .bar > div {
+        background-color: $progress-bar-green;
+    }
+    &.yellow .bar > div {
+        background-color: $progress-bar-yellow;
+    }
+}
+
+// Checkboxes
+.checkboxes {
+    float: left;
+    width: 100%;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+span.checkbox-title {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0 10px 5px;
+    font-family: "ssregular";
+    font-size: 13px;
+    color: $text-color;
+}
+.checkbox-group {
+    float: left;
+    margin: 0 20px 20px 0;
+    padding: 0;
+}
+input[type=checkbox].checkbox {
+    position: absolute;
+    left: -1000px;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    z-index: -1000;
+    overflow: hidden;
+
+    clip: rect(0 0 0 0);
+}
+
+input[type=checkbox].checkbox + label.checkbox-label {
+    display: inline-block;
+    height: 20px;
+    padding-left: 30px;
+    font-family: "ssregular";
+    font-size: 20px;
+    font-size: 14px;
+    color: $text-color;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    cursor: pointer;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+input[type=checkbox].checkbox:checked + label.checkbox-label {
+    background-position: 0 -20px;
+}
+label.checkbox-label {
+    background-image: url(../img/checkbox.png);
+
+     -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+// Radiobuttons
+.radiobuttons {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+span.radiobutton-title {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0 10px 5px;
+    font-family: "ssregular";
+    font-size: 13px;
+    color: $text-color;
+}
+.radiobutton-group {
+    float: left;
+    margin: 0 20px 20px 0;
+    padding: 0;
+}
+input[type=radio].radiobutton {
+    position: absolute;
+    left: -1000px;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    z-index: -1000;
+    overflow: hidden;
+
+    clip: rect(0 0 0 0);
+}
+
+input[type=radio].radiobutton + label.radiobutton-label {
+    display: inline-block;
+    height: 20px;
+    padding-left: 30px;
+    font-family: "ssregular";
+    font-size: 20px;
+    font-size: 14px;
+    color: $text-color;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    cursor: pointer;
+    line-height: 20px;
+    vertical-align: middle;
+}
+input[type=radio].radiobutton:checked + label.radiobutton-label {
+    background-position: 0 -20px;
+}
+label.radiobutton-label {
+    background-image: url(../img/radiobutton.png);
+
+     -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+// Switches
+.switches {
+    float: left;
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+.switches-title {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0 10px 5px;
+    font-family: "ssregular";
+    font-size: 13px;
+    color: $text-color;
+}
+.switch-group {
+    float: left;
+    position: relative;
+    width: 45px;
+    height: 20px;
+    margin: 0 10px 10px 0;
+    padding: 0;
+    .switch {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 10px;
+        background-color: $switch-default;
+
+        cursor: pointer;
+        @include transition(.3s);
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 3px;
+            left: 3px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: darken($switch-default, 20%);
+
+            @include transition(.3s);
+        }
+    }
+     > input[type="checkbox"].switchbox {
+        display: none;
+        &:checked + .switch:before {
+            -webkit-transform: translateX(25px);
+                -ms-transform: translateX(25px);
+                    transform: translateX(25px);
+        }
+    }
+    &.red {
+        @include switch("red");
+    }
+    &.green {
+        @include switch("green");
+    }
+    &.blue {
+        @include switch("blue");
+    }
+    &.yellow {
+        @include switch("yellow");
+    }
+}
+
+// Labels
+.labels {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.labels-title {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0 10px 5px;
+    font-family: "ssregular";
+    font-size: 13px;
+    color: $text-color;
+}
+.label {
+    float: left;
+    min-width: 90px;
+    height: 22px;
+    margin: 0 10px 10px 0;
+    padding: 5px 10px;
+    font-family: "oxygenbold";
+    font-size: 11px;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 4px;
+    background-color: $label-default;
+    &.blue {
+        background-color: $label-blue;
+    }
+    &.yellow {
+        background-color: $label-yellow;
+    }
+    &.red {
+        background-color: $label-red;
+    }
+    &.green {
+        background-color: $label-green;
+    }
+}
+
+// Typography
+.typography-cont {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+     > div {
+        float: left;
+        position: relative;
+        width: 100%;
+        margin: 0 0 40px 0;
+        padding: 0 0 0 100px;
+         > span {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            font-family: "ssregular";
+            font-size: 14px;
+            color: $subtext-color;
+        }
+    }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-family: "oxygenbold";
+    color: $text-color;
+
+    line-height: 150%;
+}
+h1 {
+    font-size: 36px;
+}
+h2 {
+    font-size: 28px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 16px;
+}
+h6 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+p {
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-family: "ssregular";
+    font-size: 15px;
+    color: $text-color;
+
+    line-height: 150%;
+}
+blockquote {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 10px 10px 10px 30px;
+    font-family: "ssregular";
+    font-size: 15px;
+    color: $text-color;
+    background-color: lighten($primary-action-color, 35%);
+
+    @include border(left, 3px, solid, $primary-action-color);
+    line-height: 150%;
+     > cite {
+        float: left;
+        position: relative;
+        width: 100%;
+        margin: 10px 0 0 0;
+        padding: 0 0 0 10px;
+        font-family: "ssregular";
+        font-size: 13px;
+        color: $subtext-color;
+        &:before {
+            content: "-";
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            font-family: "ssregular";
+            font-size: 13px;
+            color: $subtext-color;
+        }
+    }
+}
+
+// Icons
+.icons-cont {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+     > div {
+        display: inline-block;
+        width: 170px;
+        margin: 0;
+        padding: 30px 15px;
+         > span {
+            display: inline-block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            &:before {
+                font-size: 30px;
+                color: $text-color;
+            }
+        }
+         > p {
+            float: left;
+            width: 100%;
+            margin: 0;
+            padding: 10px 0;
+            font-family: "ssregular";
+            font-size: 15px;
+            color: $subtext-color;
+            text-align: center;
+        }
+    }
+}
+
+// Data tables
+table.dataTable tfoot {
+    display: none;
+}
+table.dataTable,
+table.dataTable th,
+table.dataTable td {
+    font-family: "ssregular";
+    font-size: 13px;
+    text-align: left;
+}
+table.dataTable thead th,
+table.dataTable thead td {
+    height: 40px;
+    color: #A1A1A1;
+    text-transform: uppercase;
+
+    border-bottom: 0;
+    box-sizing: border-box;
+}
+table.dataTable tbody tr {
+    height: 40px;
+}
+table.dataTable tbody th,
+table.dataTable tbody td {
+    padding: 8px 20px;
+    font-family: "ssregular";
+    font-size: 14px;
+    color: $text-color;
+}
+table.dataTable.stripe tbody tr.odd,
+table.dataTable.display tbody tr.odd {
+    background-color: #F8F8F8;
+}
+table.dataTable.display tbody tr.odd > .sorting_1,
+table.dataTable.order-column.stripe tbody tr.odd > .sorting_1 {
+    background-color: transparent;
+}
+table.dataTable.display tbody tr.even > .sorting_1,
+table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
+    background-color: transparent;
+}
+.dataTables_wrapper .dataTables_paginate {
+    float: none;
+    margin: 20px 0;
+    text-align: center;
+}
+.dataTables_wrapper .dataTables_paginate {
+    font-family: "oxygenbold";
+    font-size: 14px;
+    color: $subtext-color !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: $primary-action-color !important;
+    border-color: transparent;
+    background: none;
+    background-color: lighten($primary-action-color, 30%);
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    border-color: transparent;
+    background: none;
+    background-color: $primary-action-color;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    color: #EDECF1 !important;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child,
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child {
+    padding-left: 40px;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child::before,
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child::before {
+    top: 11px;
+    left: 12px;
+    width: 17px;
+    height: 17px;
+    font-family: "oxygenbold";
+    font-size: 14px;
+    border: 0;
+    background-color: $primary-action-color;
+
+    box-shadow: none;
+}
