@@ -8,9 +8,7 @@ All of the components are created by using HTML5, Sass, jQuery. All of the compo
 
 ### Want even more components? ###
 
-Soon there will be a PRO Version of Simple Admin Template with even more components included. Until then, you can subscribe to our mailing list and get notified, once the PRO Version is out.
-
-Also, feel free to suggest us for any components you want to see next.
+Hopefully, soon there will be a PRO Version of Simple Admin Template with even more components included. Feel free to suggest for any components you want to see next.
 
 ### Want to buy me a beer? ###
 
