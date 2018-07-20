@@ -12,7 +12,7 @@ Hopefully, soon there will be a PRO Version of Simple Admin Template with even m
 
 ### Want to buy me a beer? ###
 
-I get it.. you find Simple Admin Template useful for your projects and you want to buy me a beer for it, right? You can do that buy clicking on the button below and do that.
+I get it.. you find Simple Admin Template useful for your projects and you want to buy me a beer for it, right? You can do that by clicking on the button below.
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K657UG3QMFHVQ)
 
