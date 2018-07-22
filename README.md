@@ -18,4 +18,9 @@ I get it.. you find Simple Admin Template useful for your projects and you want 
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K657UG3QMFHVQ)
 
+![alt text](https://img.shields.io/badge/Donate-ETH-blue.svg)0xC47F92f78fC10Fb2ba470fa0D5e5e31567e915aa
+
+
 And, of course... if you ever come down here on the Balkans, just drop me a line that you are here and I would gladly accept the beer offer IRL :)
+
+
