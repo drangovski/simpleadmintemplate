@@ -18,7 +18,7 @@ I get it.. you find Simple Admin Template useful for your projects and you want 
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg?longCache=true&style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K657UG3QMFHVQ)
 
-![alt text](https://img.shields.io/badge/Donate-Ethereum-blue.svg?longCache=true&style=flat-square)
+![alt text](https://img.shields.io/badge/Donate-Ethereum-blue.svg?longCache=true&style=flat-square)<br />
 0xC47F92f78fC10Fb2ba470fa0D5e5e31567e915aa
 
 
