@@ -20,7 +20,9 @@ I get it.. you find Simple Admin Template useful for your projects and you want 
 
 *OR*
 
+__Bitcoin:__ 3QMtZz9QHeLUrpZL542a7e1VXxaPh6qCQM
 __Ethereum:__ 0xC47F92f78fC10Fb2ba470fa0D5e5e31567e915aa
+__Litecoin:__ MURn8B5ekTu9pZr5BVnDXUebpAxznvU5yH
 
 And, of course... if you ever come down here on the Balkans, just drop me a line that you are here and I would gladly accept the beer offer IRL :)
 
