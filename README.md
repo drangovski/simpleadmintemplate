@@ -12,11 +12,11 @@ All of the components are created by using HTML5, Sass, jQuery. All of the compo
 
 Hopefully, soon there will be a PRO Version of Simple Admin Template with even more components included. Feel free to suggest for any components you want to see next.
 
-### Want to buy me a beer? ###
+### Want to buy me a coffee? ###
 
-I get it.. you find Simple Admin Template useful for your projects and you want to buy me a beer for it, right? You can do that by clicking on the button below.
+I get it.. you find Simple Admin Template useful for your projects and you want to buy me a coffee for it, right? You can do that by clicking on the button below.
 
-<a href="https://www.buymeacoffee.com/A0NSWbj" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-red.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+<a href="https://www.buymeacoffee.com/A0NSWbj" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-red.png" alt="Buy Me A Coffee" style="width: 25% !important;" ></a>
 
 *OR*
 
