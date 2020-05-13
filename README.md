@@ -16,7 +16,7 @@ Hopefully, soon there will be a PRO Version of Simple Admin Template with even m
 
 I get it.. you find Simple Admin Template useful for your projects and you want to buy me a beer for it, right? You can do that by clicking on the button below.
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg?longCache=true&style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K657UG3QMFHVQ) 
+[![Donate]<a href="https://www.buymeacoffee.com/A0NSWbj" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-red.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
 
 *OR*
 
